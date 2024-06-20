@@ -1,4 +1,7 @@
 package com.CoenDV.OudNieuw.Repositories;
 
-public class ChallengeRepository {
+import com.CoenDV.OudNieuw.Models.Challenge;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ChallengeRepository extends JpaRepository<Challenge, Integer> {
 }
