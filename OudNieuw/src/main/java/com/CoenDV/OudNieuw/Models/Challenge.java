@@ -17,7 +17,10 @@ import java.time.LocalTime;
 public class Challenge {
     @Id
     private int challengeId;
+    private String challengeCode;
     private String title;
     private String explanation;
     private LocalTime deadline;
+    private int points;
+    private boolean used;
 }

@@ -63,7 +63,8 @@ public class DataSeeder implements ApplicationRunner {
 
         // CHALLENGES
         List<Challenge> challenges = List.of(
-
+            new Challenge(1, "ONMV", "Melvin houdt van eten", "Melvin houdt van eten, het is jou doel om minimaal 1 goede hap van hem te stelen ZONDER dat hij het doorheeft", LocalTime.of(2, 0), 100, false),
+            new Challenge(2, "ONDR", "Drogeer challenge", "Gebruik het zout uit het zakje om iemands drankje te spiken, je wint wanneer je doelwit een slok neemt", LocalTime.of(0, 1), 100, false)
         );
 
         challengeRepository.saveAll(challenges);
