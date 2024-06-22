@@ -1,10 +1,12 @@
 package com.CoenDV.OudNieuw.Controllers;
 
+import com.CoenDV.OudNieuw.Models.AddPointsRequest;
 import com.CoenDV.OudNieuw.Models.LoginRequestDTO;
 import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Services.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -21,5 +23,15 @@ public class UserController {
     @PostMapping
     public Optional<User> login(@RequestBody LoginRequestDTO username) {
         return userService.login(username.getUsername());
+    }
+
+    @GetMapping
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
+    @PutMapping
+    public User addPoints(@RequestBody AddPointsRequest request) {
+        return userService.addPoints(request);
     }
 }

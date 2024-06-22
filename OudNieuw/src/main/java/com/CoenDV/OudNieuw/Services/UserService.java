@@ -1,9 +1,11 @@
 package com.CoenDV.OudNieuw.Services;
 
+import com.CoenDV.OudNieuw.Models.AddPointsRequest;
 import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -17,5 +19,24 @@ public class UserService {
 
     public Optional<User> login(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    public List<User> getAllUsers() {
+        List<User> users = userRepository.findAll();
+        System.out.println(users.getFirst());
+        users.sort((u1, u2) -> u2.getPoints() - u1.getPoints());
+        System.out.println(users.getFirst());
+        return users;
+    }
+
+    public User addPoints(AddPointsRequest request) {
+        Optional<User> user = userRepository.findByUsername(request.getUsername());
+        if (user.isPresent()) {
+            User u = user.get();
+            u.setPoints(u.getPoints() + request.getPoints());
+            userRepository.save(u);
+            return u;
+        }
+        return null;
     }
 }
