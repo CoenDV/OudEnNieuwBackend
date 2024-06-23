@@ -1,21 +1,44 @@
 package com.CoenDV.OudNieuw.Services;
 
+import com.CoenDV.OudNieuw.Models.DTO.BuyRequest;
 import com.CoenDV.OudNieuw.Models.ShopItem;
+import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Repositories.ShopRepository;
+import com.CoenDV.OudNieuw.Repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ShopService {
 
     ShopRepository shopRepository;
+    UserRepository userRepository;
 
-    public ShopService(ShopRepository shopRepository) {
+    public ShopService(ShopRepository shopRepository, UserRepository userRepository) {
         this.shopRepository = shopRepository;
+        this.userRepository = userRepository;
     }
 
     public List<ShopItem> getShopItems() {
         return shopRepository.findAll();
+    }
+
+    public User buyItem(BuyRequest item) {
+        Optional<ShopItem> shopItem = shopRepository.findById(item.getItemId());
+        Optional<User> user = userRepository.findById(item.getUserId());
+
+        if (shopItem.isPresent() && user.isPresent()) {
+            ShopItem si = shopItem.get();
+            User u = user.get();
+
+            if (u.getPoints() >= si.getPoints()) {
+                u.setPoints(u.getPoints() - si.getPoints());
+                return userRepository.save(u);
+            }
+        }
+
+        return null;
     }
 }

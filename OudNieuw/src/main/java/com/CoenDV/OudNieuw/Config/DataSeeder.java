@@ -1,19 +1,12 @@
 package com.CoenDV.OudNieuw.Config;
 
-import com.CoenDV.OudNieuw.Models.Challenge;
+import com.CoenDV.OudNieuw.Models.*;
 import com.CoenDV.OudNieuw.Models.Enums.Role;
-import com.CoenDV.OudNieuw.Models.Quiz;
-import com.CoenDV.OudNieuw.Models.ShopItem;
-import com.CoenDV.OudNieuw.Models.User;
-import com.CoenDV.OudNieuw.Repositories.ChallengeRepository;
-import com.CoenDV.OudNieuw.Repositories.QuizRepository;
-import com.CoenDV.OudNieuw.Repositories.ShopRepository;
-import com.CoenDV.OudNieuw.Repositories.UserRepository;
+import com.CoenDV.OudNieuw.Repositories.*;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -22,12 +15,14 @@ public class DataSeeder implements ApplicationRunner {
 
     UserRepository userRepository;
     QuizRepository quizRepository;
+    QuestionRepository questionRepository;
     ShopRepository shopRepository;
     ChallengeRepository challengeRepository;
 
-    public DataSeeder(UserRepository userRepository, QuizRepository quizRepository, ShopRepository shopRepository, ChallengeRepository challengeRepository) {
+    public DataSeeder(UserRepository userRepository, QuizRepository quizRepository, QuestionRepository questionRepository, ShopRepository shopRepository, ChallengeRepository challengeRepository) {
         this.userRepository = userRepository;
         this.quizRepository = quizRepository;
+        this.questionRepository = questionRepository;
         this.shopRepository = shopRepository;
         this.challengeRepository = challengeRepository;
     }
@@ -37,7 +32,7 @@ public class DataSeeder implements ApplicationRunner {
 
         // USERS
         List<User> users = List.of(
-                new User(1, "Melvin", Role.ROLE_USER, 0, null),
+                new User(1, "Melvin", Role.ROLE_USER, 150, null),
                 new User(2, "Jeffrey", Role.ROLE_USER, 0, null),
                 new User(3, "Daniel", Role.ROLE_USER, 0, null),
                 new User(4, "Bjorn", Role.ROLE_USER, 0, null),
@@ -52,28 +47,45 @@ public class DataSeeder implements ApplicationRunner {
         // SHOP ITEMS
         List<ShopItem> shopItems = List.of(
                 new ShopItem(1, "Shotje 20", "Deel 1 shotje van min 20% uit", 100),
-                new ShopItem(2, "Steen Papier Schaar", "Best of 3 verlierzer neemt een shotje van min 20%", 80),
+                new ShopItem(2, "Steen Papier Schaar", "Best of 3 verliezer neemt een shotje van min 20%", 80),
                 new ShopItem(3, "Rondje Shotjes", "Deel 1 shotje van minimaal 20% uit", pointsForRondjeShotjes),
-                new ShopItem(4, "Snake Eyes", "Activeer snake eyes voor jezelf, 15min", 100),
+                new ShopItem(4, "Snake Eyes", "Activeer snake eyes voor jezelf, als iemand je aan kijkt neemt dat persoon een slok, 15min", 100),
                 new ShopItem(5, "Shot Roulette", "Draai het rad, drink het resultaat", 100),
-                new ShopItem(6, "Bussen", "Kom op dat weet je wel", 1000)
+                new ShopItem(6, "Bussen", "Kom op dat weet je wel", 1000),
+                new ShopItem(7, "Atje", "Laat iemand een atje zetten", 200),
+                new ShopItem(8, "Spicy", "Laat iemand een theelepel pittige saus eten", 50),
+                new ShopItem(9, "Krokodil", "Speel het krokodillen spel totdat er iemand moet drinken", 100)
+
         );
 
         shopRepository.saveAll(shopItems);
 
         // CHALLENGES
         List<Challenge> challenges = List.of(
-            new Challenge(1, "ONMV", "Melvin houdt van eten", "Melvin houdt van eten, het is jou doel om minimaal 1 goede hap van hem te stelen ZONDER dat hij het doorheeft", LocalTime.of(2, 0), 100, false),
-            new Challenge(2, "ONDR", "Drogeer challenge", "Gebruik het zout uit het zakje om iemands drankje te spiken, je wint wanneer je doelwit een slok neemt", LocalTime.of(0, 1), 100, false)
+                new Challenge(1, "ONMV", "Melvin houdt van eten", "Melvin houdt van eten, het is jou doel om minimaal 1 goede hap van hem te stelen ZONDER dat hij het doorheeft", LocalTime.of(2, 0), 100, false),
+                new Challenge(2, "ONDR", "Drogeer challenge", "Gebruik het zout uit het zakje om iemands drankje te spiken, je wint wanneer je doelwit een slok neemt", LocalTime.of(0, 1), 100, false),
+                new Challenge(3, "ONKN", "Teddy bear", "Geef 1 persson 5x een knuffel, binnen 30min", LocalTime.of(0, 30), 100, false),
+                new Challenge(4, "ONOB", "Waarom pakt hij dit aan?", "Geef iemand een random object aan zonder dat de ander er bewust van is dat ze het aanpakken (bijvoorbeeld tijdens het bellen)", LocalTime.of(2, 0), 100, false)
         );
 
         challengeRepository.saveAll(challenges);
 
-        // QUIZZES
-        List<Quiz> quizzes = List.of(
-
+        // QUESTIONS
+        List<Question> questions = List.of(
+                new Question(1, "Wat is de snelheid van sperma als een man klaar komt?", "45 km/h", List.of("45 km/h", "50 km/h", "35 km/h", "30 km/h"), "Oftewel 12,5 meter per seconde"),
+                new Question(2, "Hoeveel procent van de wereldbevolking is roodharig?", "2%", List.of("2%", "1%", "3%", "4%"), "Roodharigen zijn zeldzaam"),
+                new Question(3, "Volgens Melvin welk liedje moet het Nederlandse volkslied worden?", "unox", List.of("unox", "Bicycle Chain", "Pokemon song"), "Tja..."),
+                new Question(4, "Wat is de verste ejaculatie?", "6 meter", List.of("6 meter", "4 meter", "5 meter", "3 meter"), ""),
+                new Question(5, "Hoeveel hamburgers verkoopt McDonalds per seconde?", "75", List.of("75", "100", "50", "25"), "Dit geldt voor alle macdonalds wereldwijd"),
+                new Question(6, "Wat is het record voor de langste erectie bij een man (in uren)?", "12 uur", List.of("15 uur", "12 uur", "10 uur", "20 uur"), ""),
+                new Question(7, "Hoeveel procent van de wereldbevolking is linkshandig?", "10%", List.of("10%", "5%", "15%", "20%"), "Linkshandigen zijn zeldzaam")
         );
 
-        quizRepository.saveAll(quizzes);
+        questionRepository.saveAll(questions);
+
+        // QUIZ
+        Quiz quiz = new Quiz(1, questions);
+
+        quizRepository.save(quiz);
     }
 }

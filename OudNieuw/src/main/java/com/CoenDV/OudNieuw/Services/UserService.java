@@ -1,6 +1,6 @@
 package com.CoenDV.OudNieuw.Services;
 
-import com.CoenDV.OudNieuw.Models.AddPointsRequest;
+import com.CoenDV.OudNieuw.Models.DTO.AddPointsRequest;
 import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Repositories.UserRepository;
 import org.springframework.stereotype.Service;

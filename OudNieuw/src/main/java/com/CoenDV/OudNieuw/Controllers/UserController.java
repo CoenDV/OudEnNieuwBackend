@@ -1,7 +1,7 @@
 package com.CoenDV.OudNieuw.Controllers;
 
-import com.CoenDV.OudNieuw.Models.AddPointsRequest;
-import com.CoenDV.OudNieuw.Models.LoginRequestDTO;
+import com.CoenDV.OudNieuw.Models.DTO.AddPointsRequest;
+import com.CoenDV.OudNieuw.Models.DTO.LoginRequestDTO;
 import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Services.UserService;
 import org.springframework.web.bind.annotation.*;

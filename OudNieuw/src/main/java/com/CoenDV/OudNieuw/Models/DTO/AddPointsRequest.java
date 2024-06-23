@@ -1,4 +1,4 @@
-package com.CoenDV.OudNieuw.Models;
+package com.CoenDV.OudNieuw.Models.DTO;
 
 import lombok.Data;
 
