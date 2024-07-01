@@ -72,19 +72,19 @@ public class DataSeeder implements ApplicationRunner {
 
         // QUESTIONS
         List<Question> questions = List.of(
-                new Question(1, "Wat is de snelheid van sperma als een man klaar komt?", "45 km/h", List.of("45 km/h", "50 km/h", "35 km/h", "30 km/h"), "Oftewel 12,5 meter per seconde"),
-                new Question(2, "Hoeveel procent van de wereldbevolking is roodharig?", "2%", List.of("2%", "1%", "3%", "4%"), "Roodharigen zijn zeldzaam"),
-                new Question(3, "Volgens Melvin welk liedje moet het Nederlandse volkslied worden?", "unox", List.of("unox", "Bicycle Chain", "Pokemon song"), "Tja..."),
-                new Question(4, "Wat is de verste ejaculatie?", "6 meter", List.of("6 meter", "4 meter", "5 meter", "3 meter"), ""),
-                new Question(5, "Hoeveel hamburgers verkoopt McDonalds per seconde?", "75", List.of("75", "100", "50", "25"), "Dit geldt voor alle macdonalds wereldwijd"),
-                new Question(6, "Wat is het record voor de langste erectie bij een man (in uren)?", "12 uur", List.of("15 uur", "12 uur", "10 uur", "20 uur"), ""),
-                new Question(7, "Hoeveel procent van de wereldbevolking is linkshandig?", "10%", List.of("10%", "5%", "15%", "20%"), "Linkshandigen zijn zeldzaam")
+                new Question(0, "Wat is de snelheid van sperma als een man klaar komt?", "45 km/h", List.of("45 km/h", "50 km/h", "35 km/h", "30 km/h"), "Oftewel 12,5 meter per seconde"),
+                new Question(1, "Hoeveel procent van de wereldbevolking is roodharig?", "2%", List.of("2%", "1%", "3%", "4%"), "Roodharigen zijn zeldzaam"),
+                new Question(2, "Volgens Melvin welk liedje moet het Nederlandse volkslied worden?", "unox", List.of("unox", "Bicycle Chain", "Pokemon song"), "Tja..."),
+                new Question(3, "Wat is de verste ejaculatie?", "6 meter", List.of("6 meter", "4 meter", "5 meter", "3 meter"), ""),
+                new Question(4, "Hoeveel hamburgers verkoopt McDonalds per seconde?", "75", List.of("75", "100", "50", "25"), "Dit geldt voor alle macdonalds wereldwijd"),
+                new Question(5, "Wat is het record voor de langste erectie bij een man (in uren)?", "12 uur", List.of("15 uur", "12 uur", "10 uur", "20 uur"), ""),
+                new Question(6, "Hoeveel procent van de wereldbevolking is linkshandig?", "10%", List.of("10%", "5%", "15%", "20%"), "Linkshandigen zijn zeldzaam")
         );
 
         questionRepository.saveAll(questions);
 
         // QUIZ
-        Quiz quiz = new Quiz(1, questions);
+        Quiz quiz = new Quiz(1, questions, 0);
 
         quizRepository.save(quiz);
     }

@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddPointsRequest {
-    String username;
-    int points;
+public class AnswerRequest {
+
+    private int userId;
+    private String answer;
 }

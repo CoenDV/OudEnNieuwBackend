@@ -21,6 +21,11 @@ public class ChallengeService {
 
     public Challenge getChallenge(String challengeCode, int userId) {
         Challenge challenge = challengeRepository.findChallengeByChallengeCodeAndUsedFalse(challengeCode);
+
+        if (challenge == null) {
+            throw new IllegalArgumentException("Verkeerde code of code is al gebruikt");
+        }
+
         Optional<User> user = userRepository.findById(userId);
 
         if (user.isPresent()) {

@@ -29,6 +29,10 @@ public class UserService {
         return users;
     }
 
+    public User getUserById(int id) {
+        return userRepository.findById(id).get();
+    }
+
     public User addPoints(AddPointsRequest request) {
         Optional<User> user = userRepository.findByUsername(request.getUsername());
         if (user.isPresent()) {
