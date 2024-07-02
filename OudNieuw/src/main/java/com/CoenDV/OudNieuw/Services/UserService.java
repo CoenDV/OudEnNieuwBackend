@@ -23,9 +23,7 @@ public class UserService {
 
     public List<User> getAllUsers() {
         List<User> users = userRepository.findAll();
-        System.out.println(users.getFirst());
         users.sort((u1, u2) -> u2.getPoints() - u1.getPoints());
-        System.out.println(users.getFirst());
         return users;
     }
 

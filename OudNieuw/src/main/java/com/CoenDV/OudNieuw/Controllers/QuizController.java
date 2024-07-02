@@ -23,62 +23,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("quiz")
 public class QuizController {
 
-    private boolean isQuizRunning = false;
-    private Quiz quiz;
-
-    @Autowired
-    private SimpMessagingTemplate template;
-
     QuizService quizService;
-    UserService userService;
 
-    public QuizController(QuizService quizService, UserService userService) {
+    public QuizController(QuizService quizService) {
         this.quizService = quizService;
-        this.userService = userService;
     }
 
     @PostMapping("start")
-    public void startQuiz() {
-        if (!isQuizRunning) {
-            quiz = quizService.startQuiz();
-            isQuizRunning = true;
-        }
+    public boolean startQuiz() {
+        return quizService.startQuiz();
+    }
+
+    @PostMapping("next")
+    public boolean nextQuestion() {
+        return quizService.nextQuestion();
     }
 
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
     public AnswerReply answerQuestion(AnswerRequest answer) {
-
-        System.out.println("Answer: " + answer);
-
-        AnswerReply reply = new AnswerReply();
-        if (quiz.getCorrectAnswer(answer.getAnswer())) {
-            User user = userService.addPoints(new AddPointsRequest(userService.getUserById(answer.getUserId()).getUsername(), 100));
-            reply.setUser(user);
-            reply.setPoints(100);
-            System.out.println("Correct answer: " + reply);
-            return reply;
-        } else {
-            reply.setUser(userService.getUserById(answer.getUserId()));
-            reply.setPoints(0);
-            return reply;
-        }
-    }
-
-    @Scheduled(fixedRate = 5000)
-    @MessageMapping("/nextQuestion")
-    @SendTo("/topic/quiz-mainscreen")
-    public void getNextQuestion() {
-        System.out.println("Getting next question");
-        if (isQuizRunning) {
-            Question question = quiz.getNextQuestion();
-
-            if (question == null) {
-                isQuizRunning = false;
-                return;
-            }
-
-            template.convertAndSend("/topic/quiz-mainscreen", question);
-        }
+        return quizService.answerQuestion(answer);
     }
 }

@@ -17,16 +17,10 @@ v
 FOudNieuw/src/main/java/com/CoenDV/OudNieuw/Config/WebSocketConfig.java,0\a\0aba695aa8f2706e9f3b8ee90e9df9e2e0ce6c03
 z
 JOudNieuw/src/main/java/com/CoenDV/OudNieuw/Controllers/QuizController.java,5\b\5b4585472de8d16af716cbd7d3a2fd7ff0f0b9dc
-y
-IOudNieuw/src/main/java/com/CoenDV/OudNieuw/Models/DTO/sendQuizAnswer.java,c\f\cff528a7e2c0e1c11e3c663f7e549e8dd089f708
 u
 EOudNieuw/src/main/java/com/CoenDV/OudNieuw/Models/DTO/BuyRequest.java,0\a\0a96ba9c16856af72bce6b556e3e7581caa88980
-|
-LOudNieuw/src/main/java/com/CoenDV/OudNieuw/Models/DTO/answerQuizRequest.java,f\1\f11ba6637e2fa07126f2857e515ab84d504fe8f9
 x
 HOudNieuw/src/main/java/com/CoenDV/OudNieuw/Models/DTO/AnswerRequest.java,a\1\a1610580cfe86701f1498badc5d08b8c80800bd0
-w
-GOudNieuw/src/main/java/com/CoenDV/OudNieuw/Models/DTO/AnswerAnswer.java,2\b\2beaeae4aca3725a9f552c8c1f47e1edc3fc7431
 z
 JOudNieuw/src/main/java/com/CoenDV/OudNieuw/Controllers/ShopController.java,e\3\e306ed12ce88a6a802acda9f0d96a58831af30de
 t
@@ -41,3 +35,5 @@ t
 DOudNieuw/src/main/java/com/CoenDV/OudNieuw/Services/UserService.java,3\c\3ce38e11cdd6b166b43373ba15e5f1c599492090
 {
 KOudNieuw/src/main/java/com/CoenDV/OudNieuw/Models/DTO/AddPointsRequest.java,3\a\3ac9ebcfa3c549433ae9284f338383bff34d2bbb
+z
+JOudNieuw/src/main/java/com/CoenDV/OudNieuw/Controllers/UserController.java,e\d\ed9506134be740dad3d323b61528014821271128
