@@ -37,3 +37,7 @@ DOudNieuw/src/main/java/com/CoenDV/OudNieuw/Services/UserService.java,3\c\3ce38
 KOudNieuw/src/main/java/com/CoenDV/OudNieuw/Models/DTO/AddPointsRequest.java,3\a\3ac9ebcfa3c549433ae9284f338383bff34d2bbb
 z
 JOudNieuw/src/main/java/com/CoenDV/OudNieuw/Controllers/UserController.java,e\d\ed9506134be740dad3d323b61528014821271128
+w
+GOudNieuw/src/main/java/com/CoenDV/OudNieuw/Models/Enums/ObjectType.java,0\0\002e2948bfdcda093538ae67557393688f87325f
+o
+?OudNieuw/src/main/java/com/CoenDV/OudNieuw/Models/ShopItem.java,3\6\365ef12cc9d23586fb3829d9ddcc2e3f7b49a5c6

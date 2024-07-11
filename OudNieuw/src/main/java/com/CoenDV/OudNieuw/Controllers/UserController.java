@@ -30,6 +30,11 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    @GetMapping("/{username}/points")
+    public int getPoints(@PathVariable String username) {
+        return userService.getPoints(username);
+    }
+
     @PutMapping
     public User addPoints(@RequestBody AddPointsRequest request) {
         return userService.addPoints(request);

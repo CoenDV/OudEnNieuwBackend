@@ -1,5 +1,6 @@
 package com.CoenDV.OudNieuw.Models;
 
+import com.CoenDV.OudNieuw.Models.Enums.ObjectType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -20,4 +21,5 @@ public class Question {
     private String answer;
     private List<String> options;
     private String explanation;
+    private ObjectType objectType;
 }

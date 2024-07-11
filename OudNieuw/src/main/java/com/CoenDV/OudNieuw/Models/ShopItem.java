@@ -1,5 +1,6 @@
 package com.CoenDV.OudNieuw.Models;
 
+import com.CoenDV.OudNieuw.Models.Enums.ObjectType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -16,4 +17,5 @@ public class ShopItem {
     private String title;
     private String explanation;
     private int points;
+    private ObjectType objectType;
 }

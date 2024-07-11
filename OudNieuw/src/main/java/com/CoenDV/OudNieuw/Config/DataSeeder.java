@@ -1,6 +1,7 @@
 package com.CoenDV.OudNieuw.Config;
 
 import com.CoenDV.OudNieuw.Models.*;
+import com.CoenDV.OudNieuw.Models.Enums.ObjectType;
 import com.CoenDV.OudNieuw.Models.Enums.Role;
 import com.CoenDV.OudNieuw.Repositories.*;
 import org.springframework.boot.ApplicationArguments;
@@ -46,15 +47,15 @@ public class DataSeeder implements ApplicationRunner {
 
         // SHOP ITEMS
         List<ShopItem> shopItems = List.of(
-                new ShopItem(1, "Shotje 20", "Deel 1 shotje van min 20% uit", 100),
-                new ShopItem(2, "Steen Papier Schaar", "Best of 3 verliezer neemt een shotje van min 20%", 80),
-                new ShopItem(3, "Rondje Shotjes", "Deel 1 shotje van minimaal 20% uit", pointsForRondjeShotjes),
-                new ShopItem(4, "Snake Eyes", "Activeer snake eyes voor jezelf, als iemand je aan kijkt neemt dat persoon een slok, 15min", 100),
-                new ShopItem(5, "Shot Roulette", "Draai het rad, drink het resultaat", 100),
-                new ShopItem(6, "Bussen", "Kom op dat weet je wel", 1000),
-                new ShopItem(7, "Atje", "Laat iemand een atje zetten", 200),
-                new ShopItem(8, "Spicy", "Laat iemand een theelepel pittige saus eten", 50),
-                new ShopItem(9, "Krokodil", "Speel het krokodillen spel totdat er iemand moet drinken", 100)
+                new ShopItem(1, "Shotje 20", "Deel 1 shotje van min 20% uit", 100, ObjectType.SHOPITEM),
+                new ShopItem(2, "Steen Papier Schaar", "Best of 3 verliezer neemt een shotje van min 20%", 80, ObjectType.SHOPITEM),
+                new ShopItem(3, "Rondje Shotjes", "Iedereen neemt een shotje van min 20%, ja ook jij", pointsForRondjeShotjes, ObjectType.SHOPITEM),
+                new ShopItem(4, "Snake Eyes", "Activeer snake eyes voor jezelf, als iemand je aan kijkt neemt dat persoon een slok, 15min", 100, ObjectType.SHOPITEM),
+                new ShopItem(5, "Shot Roulette", "Draai het rad, drink het resultaat", 100, ObjectType.SHOPITEM),
+                new ShopItem(6, "Bussen", "Kom op dat weet je wel", 1000, ObjectType.SHOPITEM),
+                new ShopItem(7, "Atje", "Laat iemand een atje zetten", 200, ObjectType.SHOPITEM),
+                new ShopItem(8, "Spicy", "Laat iemand een theelepel pittige saus eten", 50, ObjectType.SHOPITEM),
+                new ShopItem(9, "Krokodil", "Speel het krokodillen spel totdat er iemand moet drinken", 100, ObjectType.SHOPITEM)
 
         );
 
@@ -72,13 +73,13 @@ public class DataSeeder implements ApplicationRunner {
 
         // QUESTIONS
         List<Question> questions = List.of(
-                new Question(0, "Wat is de snelheid van sperma als een man klaar komt?", "45 km/h", List.of("45 km/h", "50 km/h", "35 km/h", "30 km/h"), "Oftewel 12,5 meter per seconde"),
-                new Question(1, "Hoeveel procent van de wereldbevolking is roodharig?", "2%", List.of("2%", "1%", "3%", "4%"), "Roodharigen zijn zeldzaam"),
-                new Question(2, "Volgens Melvin welk liedje moet het Nederlandse volkslied worden?", "unox", List.of("unox", "Bicycle Chain", "Pokemon song"), "Tja..."),
-                new Question(3, "Wat is de verste ejaculatie?", "6 meter", List.of("6 meter", "4 meter", "5 meter", "3 meter"), ""),
-                new Question(4, "Hoeveel hamburgers verkoopt McDonalds per seconde?", "75", List.of("75", "100", "50", "25"), "Dit geldt voor alle macdonalds wereldwijd"),
-                new Question(5, "Wat is het record voor de langste erectie bij een man (in uren)?", "12 uur", List.of("15 uur", "12 uur", "10 uur", "20 uur"), ""),
-                new Question(6, "Hoeveel procent van de wereldbevolking is linkshandig?", "10%", List.of("10%", "5%", "15%", "20%"), "Linkshandigen zijn zeldzaam")
+                new Question(0, "Wat is de snelheid van sperma als een man klaar komt?", "45 km/h", List.of("45 km/h", "50 km/h", "35 km/h", "30 km/h"), "Oftewel 12,5 meter per seconde", ObjectType.QUESTION),
+                new Question(1, "Hoeveel procent van de wereldbevolking is roodharig?", "2%", List.of("2%", "1%", "3%", "4%"), "Roodharigen zijn zeldzaam", ObjectType.QUESTION),
+                new Question(2, "Volgens Melvin welk liedje moet het Nederlandse volkslied worden?", "unox", List.of("unox", "Bicycle Chain", "Pokemon song"), "Tja...", ObjectType.QUESTION),
+                new Question(3, "Wat is de verste ejaculatie?", "6 meter", List.of("6 meter", "4 meter", "5 meter", "3 meter"), "", ObjectType.QUESTION),
+                new Question(4, "Hoeveel hamburgers verkoopt McDonalds per seconde?", "75", List.of("75", "100", "50", "25"), "Dit geldt voor alle macdonalds wereldwijd", ObjectType.QUESTION),
+                new Question(5, "Wat is het record voor de langste erectie bij een man (in uren)?", "12 uur", List.of("15 uur", "12 uur", "10 uur", "20 uur"), "", ObjectType.QUESTION),
+                new Question(6, "Hoeveel procent van de wereldbevolking is linkshandig?", "10%", List.of("10%", "5%", "15%", "20%"), "Linkshandigen zijn zeldzaam", ObjectType.QUESTION)
         );
 
         questionRepository.saveAll(questions);

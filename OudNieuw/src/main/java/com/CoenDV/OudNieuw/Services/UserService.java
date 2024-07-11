@@ -41,4 +41,8 @@ public class UserService {
         }
         return null;
     }
+
+    public int getPoints(String username) {
+        return userRepository.findByUsername(username).get().getPoints();
+    }
 }
