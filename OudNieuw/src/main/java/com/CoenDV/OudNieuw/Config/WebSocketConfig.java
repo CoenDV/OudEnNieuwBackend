@@ -20,6 +20,6 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/gs-guide-websocket").setAllowedOrigins("http://localhost:5173").setAllowedOrigins("https://coendv.github.io");
+        registry.addEndpoint("/gs-guide-websocket").setAllowedOrigins("http://localhost:5173").setAllowedOrigins("https://oudennieuw.onrender.com");
     }
 }
