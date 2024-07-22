@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:5173/", "https://oudennieuwbackend.onrender.com/"})
+@CrossOrigin(origins = {"http://localhost:5173/", "https://coendv.github.io/"})
 @RequestMapping("login")
 public class UserController {
 

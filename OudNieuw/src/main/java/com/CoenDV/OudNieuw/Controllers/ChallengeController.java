@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("challenge")
-@CrossOrigin(origins = {"http://localhost:5173/", "https://oudennieuwbackend.onrender.com/"})
+@CrossOrigin(origins = {"http://localhost:5173/", "https://coendv.github.io."})
 public class ChallengeController {
 
     private final ChallengeService challengeService;

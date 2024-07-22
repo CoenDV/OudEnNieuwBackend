@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:5173/", "https://oudennieuwbackend.onrender.com/"})
+@CrossOrigin(origins = {"http://localhost:5173/", "https://coendv.github.io/"})
 @RequestMapping("quiz")
 public class QuizController {
 
