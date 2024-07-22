@@ -4,6 +4,7 @@ RUN apt-get install openjdk-21-jdk -y
 RUN apt-get update && apt-get install dos2unix -y
 COPY . .
 
+WORKDIR /OudEnNieuw
 RUN dos2unix ./mvnw
 RUN chmod +x ./mvnw
 RUN ./mvnw clean install -U
