@@ -8,6 +8,7 @@ import com.CoenDV.OudNieuw.Models.Quiz;
 import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Services.QuizService;
 import com.CoenDV.OudNieuw.Services.UserService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -37,6 +38,11 @@ public class QuizController {
     @PostMapping("next")
     public boolean nextQuestion() {
         return quizService.nextQuestion();
+    }
+
+    @PostMapping("answer")
+    public void showAnswer() throws JsonProcessingException {
+        quizService.showAnswer();
     }
 
     @MessageMapping("/hello")

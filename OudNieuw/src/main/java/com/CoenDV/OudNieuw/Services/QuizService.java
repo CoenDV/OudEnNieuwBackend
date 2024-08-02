@@ -7,6 +7,8 @@ import com.CoenDV.OudNieuw.Models.Question;
 import com.CoenDV.OudNieuw.Models.Quiz;
 import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Repositories.QuizRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -21,16 +23,18 @@ public class QuizService {
 
     UserService userService;
     QuizRepository quizRepository;
+    ObjectMapper objectMapper = new ObjectMapper();
 
     private boolean isQuizRunning = false;
     private Quiz quiz;
 
     private SimpMessagingTemplate template;
 
-    public QuizService(QuizRepository quizRepository, UserService userService, SimpMessagingTemplate template) {
+    public QuizService(QuizRepository quizRepository, UserService userService, SimpMessagingTemplate template, ObjectMapper objectMapper) {
         this.quizRepository = quizRepository;
         this.userService = userService;
         this.template = template;
+        this.objectMapper = objectMapper;
     }
 
     public boolean startQuiz() {
@@ -61,6 +65,13 @@ public class QuizService {
             return true;
         }
         return false;
+    }
+
+    public void showAnswer() throws JsonProcessingException {
+        if (isQuizRunning) {
+            System.out.println("Showing answer");
+            template.convertAndSend("/topic/quiz-mainscreen", objectMapper.writeValueAsString("showAnswer"));
+        }
     }
 
     public AnswerReply answerQuestion(AnswerRequest answer) {
