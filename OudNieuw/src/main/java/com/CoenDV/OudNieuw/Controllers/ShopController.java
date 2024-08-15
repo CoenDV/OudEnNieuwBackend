@@ -26,6 +26,11 @@ public class ShopController {
 
     @PostMapping("buy")
     public User buyItem(@RequestBody BuyRequest item) {
+        System.out.println(item);
+
+        if (item.getItemId() == 10) // Mystery Box
+            return shopService.buyMysteryBox(item);
+
         return shopService.buyItem(item);
     }
 }

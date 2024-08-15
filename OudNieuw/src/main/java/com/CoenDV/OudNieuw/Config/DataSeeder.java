@@ -33,7 +33,7 @@ public class DataSeeder implements ApplicationRunner {
 
         // USERS
         List<User> users = List.of(
-                new User(1, "Melvin", Role.ROLE_USER, 150, null),
+                new User(1, "Melvin", Role.ROLE_USER, 1000, null),
                 new User(2, "Jeffrey", Role.ROLE_USER, 0, null),
                 new User(3, "Daniel", Role.ROLE_USER, 0, null),
                 new User(4, "Bjorn", Role.ROLE_USER, 0, null),
@@ -55,8 +55,8 @@ public class DataSeeder implements ApplicationRunner {
                 new ShopItem(6, "Bussen", "Kom op dat weet je wel", 1000, ObjectType.SHOPITEM),
                 new ShopItem(7, "Atje", "Laat iemand een atje zetten", 200, ObjectType.SHOPITEM),
                 new ShopItem(8, "Spicy", "Laat iemand een theelepel pittige saus eten", 50, ObjectType.SHOPITEM),
-                new ShopItem(9, "Krokodil", "Speel het krokodillen spel totdat er iemand moet drinken", 100, ObjectType.SHOPITEM)
-
+                new ShopItem(9, "Krokodil", "Speel het krokodillen spel totdat er iemand moet drinken", 100, ObjectType.SHOPITEM),
+                new ShopItem(10, "Mystery Box", "Wie weet wat er allemaal in kan zitten", 250, ObjectType.SHOPITEM) // Must always be last index so it cant be selected by random roll
         );
 
         shopRepository.saveAll(shopItems);

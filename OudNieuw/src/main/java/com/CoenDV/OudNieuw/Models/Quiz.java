@@ -29,6 +29,7 @@ public class Quiz {
         }
 
         Question nextQuestion = questions.get(currentQuestionIndex);
+        nextQuestion.scrambleOptions();
         currentQuestionIndex++;
 
         return nextQuestion;

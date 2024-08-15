@@ -3,11 +3,11 @@ package com.CoenDV.OudNieuw.Models;
 import com.CoenDV.OudNieuw.Models.Enums.ObjectType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -22,4 +22,8 @@ public class Question {
     private List<String> options;
     private String explanation;
     private ObjectType objectType;
+
+    public void scrambleOptions() {
+        Collections.shuffle(options);
+    }
 }
