@@ -1,6 +1,7 @@
 package com.CoenDV.OudNieuw.Services;
 
 import com.CoenDV.OudNieuw.Models.DTO.AddPointsRequest;
+import com.CoenDV.OudNieuw.Models.DTO.GetPointsReply;
 import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Repositories.UserRepository;
 import org.springframework.stereotype.Service;
@@ -42,7 +43,10 @@ public class UserService {
         return null;
     }
 
-    public int getPoints(String username) {
-        return userRepository.findByUsername(username).get().getPoints();
+    public GetPointsReply getPoints(String username) {
+        return new GetPointsReply(
+                userRepository.findByUsername(username).get().getPoints(),
+                userRepository.findAll().stream().filter(u -> u.getPoints() > userRepository.findByUsername(username).get().getPoints()).toArray().length + 1
+        );
     }
 }

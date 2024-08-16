@@ -1,6 +1,7 @@
 package com.CoenDV.OudNieuw.Controllers;
 
 import com.CoenDV.OudNieuw.Models.DTO.AddPointsRequest;
+import com.CoenDV.OudNieuw.Models.DTO.GetPointsReply;
 import com.CoenDV.OudNieuw.Models.DTO.LoginRequestDTO;
 import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Services.UserService;
@@ -31,7 +32,7 @@ public class UserController {
     }
 
     @GetMapping("/{username}/points")
-    public int getPoints(@PathVariable String username) {
+    public GetPointsReply getPoints(@PathVariable String username) {
         return userService.getPoints(username);
     }
 
