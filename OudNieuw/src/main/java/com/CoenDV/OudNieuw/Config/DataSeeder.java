@@ -57,7 +57,7 @@ public class DataSeeder implements ApplicationRunner {
 //                new ShopItem(8, "Spicy", "Laat iemand een theelepel pittige saus eten", 50, ObjectType.SHOPITEM),
 //                new ShopItem(9, "Krokodil", "Speel het krokodillen spel totdat er iemand moet drinken", 100, ObjectType.SHOPITEM),
 //                new ShopItem(10, "Double Or Nothing", "Kies een speler om een munt op te gooien. Als het kop is, moet hij/zij dubbel drinken voor 5 minuten; als het munt is, hoeft hij/zij niet te drinken.", 100, ObjectType.SHOPITEM),
-//                new ShopItem(11, "Pauze", "Neem een pauze van 5 minuten waarin jij niet hoeft te drinken, maar iedereen anders wel voor jou moet drinken wanneer jij normaal zou moeten drinken", 100, ObjectType.SHOPITEM),
+//                new ShopItem(11, "Pauze", "Neem een pauze van 5 minuten waarin jij niet hoeft te drinken, maar iemand anders wel voor jou moet drinken wanneer jij normaal zou moeten drinken", 100, ObjectType.SHOPITEM),
 //                new ShopItem(12, "BDSM", "boei 2 mensen samen voor 10 minuten", 100, ObjectType.SHOPITEM),
 //                new ShopItem(13, "Cupido", "Kies 2 mensen die plotseling diep verliefd worden en graag alles samen willen drinken", 100, ObjectType.SHOPITEM),
 //                new ShopItem(99, "UNO Reverse Card", "Zet deze kaart in wanneer iemand jou iets forceert te doen, deze speler moet het nu zelf doen!", 0, ObjectType.SECRET),
