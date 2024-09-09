@@ -11,7 +11,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @Configuration
 @EnableScheduling
 @EnableWebSocketMessageBroker
-@CrossOrigin(origins = {"http://localhost:5173/", "https://oudennieuw.onrender.com/"})
+@CrossOrigin(origins = {"http://localhost:5173/", "https://oudennieuw.onrender.com/", "https://oud-en-nieuw-backend-git-coen-de-vries-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/"})
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
