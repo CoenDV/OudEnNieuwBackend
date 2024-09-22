@@ -31,7 +31,7 @@ public class DataSeeder implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-//        // USERS
+        // USERS
 //        List<User> users = List.of(
 //                new User(1, "Melvin", Role.ROLE_USER, 1000, null),
 //                new User(2, "Jeffrey", Role.ROLE_USER, 0, null),
