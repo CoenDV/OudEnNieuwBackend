@@ -62,6 +62,8 @@ public class DataSeeder implements ApplicationRunner {
 //                new ShopItem(13, "Cupido", "Kies 2 mensen die plotseling diep verliefd worden en graag alles samen willen drinken", 100, ObjectType.SHOPITEM),
 //                new ShopItem(14, "Midget Bierpong", "Speel een potje bierpong met 3 cups, verliezer drinkt 3 extra slokken", 100, ObjectType.SHOPITEM),
 //                new ShopItem(15, "Zwakke hand", "Iedereen moet de komende 15 minuten met hun niet dominante hand drinken, doe je dit niet moet je een extra slok nemen", 100, ObjectType.SHOPITEM),
+//                new ShopItem(16, "No Brainer", "Voor de volgende 5 vragen moet de gekozen speler een shotje nemen per fout antwoord", 100, ObjectType.SHOPITEM),
+//                new ShopItem(17, "Oome Geert", "Verzin een regel die de komende 15 minuten geldt", 100, ObjectType.SHOPITEM),
 //                new ShopItem(99, "UNO Reverse Card", "Zet deze kaart in wanneer iemand jou iets forceert te doen, deze speler moet het nu zelf doen!", 0, ObjectType.SECRET),
 //                new ShopItem(100, "Mystery Box", "Wie weet wat er allemaal in kan zitten", 250, ObjectType.SHOPITEM) // Must always be last index so it cant be selected by random roll
 //        );
