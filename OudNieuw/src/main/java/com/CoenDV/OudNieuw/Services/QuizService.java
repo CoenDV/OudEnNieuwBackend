@@ -16,6 +16,7 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.TimerTask;
 
 @Service
@@ -37,11 +38,11 @@ public class QuizService {
         this.objectMapper = objectMapper;
     }
 
-    public boolean startQuiz() {
+    public boolean startQuiz(int quizId) {
         if (!isQuizRunning) {
             System.out.println("Starting quiz");
             isQuizRunning = true;
-            quiz = quizRepository.findById(1).get();
+            quiz = quizRepository.findById(quizId).get();
             template.convertAndSend("/topic/quiz-mainscreen", true);
             return true;
         }
@@ -90,5 +91,9 @@ public class QuizService {
             reply.setPoints(0);
             return reply;
         }
+    }
+
+    public List<Quiz> getQuizzes() {
+        return quizRepository.findAll();
     }
 }

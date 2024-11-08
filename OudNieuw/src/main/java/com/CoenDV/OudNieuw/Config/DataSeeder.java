@@ -67,7 +67,7 @@ public class DataSeeder implements ApplicationRunner {
 //                new ShopItem(100, "Mystery Box", "Wie weet wat er allemaal in kan zitten", 250, ObjectType.SHOPITEM, LocalTime.of(0, 0)) // Must always be last index so it cant be selected by random roll
 //        );
 //
-//        shopRepository.saveAll(shopItems);
+//                shopRepository.saveAll(shopItems);
 //
 //        // CHALLENGES
 //        List<Challenge> challenges = List.of(
@@ -90,11 +90,19 @@ public class DataSeeder implements ApplicationRunner {
 //                new Question(6, "Hoeveel procent van de wereldbevolking is linkshandig?", "10%", List.of("10%", "5%", "15%", "20%"), "Linkshandigen zijn zeldzaam", ObjectType.QUESTION)
 //        );
 //
+//        // TEST
+//        List<Question> testQuestions = List.of(
+//                new Question(7, "Hoeveel procent van de wereldbevolking is linkshandig?", "10%", List.of("10%", "5%", "15%", "20%"), "Linkshandigen zijn zeldzaam", ObjectType.QUESTION)
+//        );
+//
 //        questionRepository.saveAll(questions);
+//        questionRepository.saveAll(testQuestions);
 //
 //        // QUIZ
 //        Quiz quiz = new Quiz(1, questions, 0);
+//        Quiz testQuiz = new Quiz(2, testQuestions, 0);
 //
 //        quizRepository.save(quiz);
+//        quizRepository.save(testQuiz);
     }
 }
