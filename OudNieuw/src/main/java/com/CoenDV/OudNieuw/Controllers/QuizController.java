@@ -14,10 +14,9 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:5173/", "https://oudennieuw.onrender.com/", "https://oud-en-nieuw-backend-git-coen-de-vries-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/"})
@@ -30,9 +29,9 @@ public class QuizController {
         this.quizService = quizService;
     }
 
-    @PostMapping("start")
-    public boolean startQuiz() {
-        return quizService.startQuiz();
+    @PostMapping("start/{quizId}")
+    public boolean startQuiz(@PathVariable int quizId) {
+        return quizService.startQuiz(quizId);
     }
 
     @PostMapping("next")
@@ -43,6 +42,11 @@ public class QuizController {
     @PostMapping("answer")
     public void showAnswer() throws JsonProcessingException {
         quizService.showAnswer();
+    }
+
+    @GetMapping
+    public List<Quiz> getQuizzes() {
+        return quizService.getQuizzes();
     }
 
     @MessageMapping("/hello")

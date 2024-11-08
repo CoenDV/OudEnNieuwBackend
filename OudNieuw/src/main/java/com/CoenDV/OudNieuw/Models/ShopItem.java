@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Time;
+import java.time.LocalTime;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -18,4 +21,5 @@ public class ShopItem {
     private String explanation;
     private int points;
     private ObjectType objectType;
+    private LocalTime duration;
 }

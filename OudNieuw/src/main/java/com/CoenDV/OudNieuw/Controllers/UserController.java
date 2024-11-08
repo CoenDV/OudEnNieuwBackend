@@ -33,6 +33,7 @@ public class UserController {
 
     @GetMapping("/{username}/points")
     public GetPointsReply getPoints(@PathVariable String username) {
+        System.out.println();
         return userService.getPoints(username);
     }
 

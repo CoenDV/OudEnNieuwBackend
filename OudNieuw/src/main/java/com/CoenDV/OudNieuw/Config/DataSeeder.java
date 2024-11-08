@@ -31,7 +31,7 @@ public class DataSeeder implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-//        // USERS
+        // USERS
 //        List<User> users = List.of(
 //                new User(1, "Melvin", Role.ROLE_USER, 1000, null),
 //                new User(2, "Jeffrey", Role.ROLE_USER, 0, null),
@@ -47,24 +47,27 @@ public class DataSeeder implements ApplicationRunner {
 //
 //        // SHOP ITEMS
 //        List<ShopItem> shopItems = List.of(
-//                new ShopItem(1, "Shotje 20", "Deel 1 shotje van min 20% uit", 100, ObjectType.SHOPITEM),
-//                new ShopItem(2, "Steen Papier Schaar", "Best of 3 verliezer neemt een shotje van min 20%", 80, ObjectType.SHOPITEM),
-//                new ShopItem(3, "Rondje Shotjes", "Iedereen neemt een shotje van min 20%, ja ook jij", pointsForRondjeShotjes, ObjectType.SHOPITEM),
-//                new ShopItem(4, "Snake Eyes", "Activeer snake eyes voor jezelf, als iemand je aan kijkt neemt dat persoon een slok, 15min", 100, ObjectType.SHOPITEM),
-//                new ShopItem(5, "Shot Roulette", "Draai het rad, drink het resultaat", 100, ObjectType.SHOPITEM),
-//                new ShopItem(6, "Bussen", "Kom op dat weet je wel", 1000, ObjectType.SHOPITEM),
-//                new ShopItem(7, "Atje", "Laat iemand een atje zetten", 200, ObjectType.SHOPITEM),
-//                new ShopItem(8, "Spicy", "Laat iemand een theelepel pittige saus eten", 50, ObjectType.SHOPITEM),
-//                new ShopItem(9, "Krokodil", "Speel het krokodillen spel totdat er iemand moet drinken", 100, ObjectType.SHOPITEM),
-//                new ShopItem(10, "Double Or Nothing", "Kies een speler om een munt op te gooien. Als het kop is, moet hij/zij dubbel drinken voor 5 minuten; als het munt is, hoeft hij/zij niet te drinken.", 100, ObjectType.SHOPITEM),
-//                new ShopItem(11, "Pauze", "Neem een pauze van 5 minuten waarin jij niet hoeft te drinken, maar iemand anders wel voor jou moet drinken wanneer jij normaal zou moeten drinken", 100, ObjectType.SHOPITEM),
-//                new ShopItem(12, "BDSM", "boei 2 mensen samen voor 10 minuten", 100, ObjectType.SHOPITEM),
-//                new ShopItem(13, "Cupido", "Kies 2 mensen die plotseling diep verliefd worden en graag alles samen willen drinken", 100, ObjectType.SHOPITEM),
-//                new ShopItem(99, "UNO Reverse Card", "Zet deze kaart in wanneer iemand jou iets forceert te doen, deze speler moet het nu zelf doen!", 0, ObjectType.SECRET),
-//                new ShopItem(100, "Mystery Box", "Wie weet wat er allemaal in kan zitten", 250, ObjectType.SHOPITEM) // Must always be last index so it cant be selected by random roll
+//                new ShopItem(1, "Shotje 20", "Deel 1 shotje van min 20% uit", 100, ObjectType.SHOPITEM, LocalTime.of(0, 0)),
+//                new ShopItem(2, "Steen Papier Schaar", "Best of 3 verliezer neemt een shotje van min 20%", 80, ObjectType.SHOPITEM, LocalTime.of(0, 0)),
+//                new ShopItem(3, "Rondje Shotjes", "Iedereen neemt een shotje van min 20%, ja ook jij", pointsForRondjeShotjes, ObjectType.SHOPITEM, LocalTime.of(0, 0)),
+//                new ShopItem(4, "Snake Eyes", "Activeer snake eyes voor jezelf, als iemand je aan kijkt neemt dat persoon een slok, 15min", 100, ObjectType.SHOPITEM, LocalTime.of(0, 15)),
+//                new ShopItem(5, "Shot Roulette", "Draai het rad, drink het resultaat", 100, ObjectType.SHOPITEM, LocalTime.of(0, 0)),
+//                new ShopItem(6, "Bussen", "Kom op dat weet je wel", 1000, ObjectType.SHOPITEM, LocalTime.of(0, 0)),
+//                new ShopItem(7, "Atje", "Laat iemand een atje zetten", 200, ObjectType.SHOPITEM, LocalTime.of(0, 0)),
+//                new ShopItem(8, "Spicy", "Laat iemand een theelepel pittige saus eten", 50, ObjectType.SHOPITEM, LocalTime.of(0, 0)),
+//                new ShopItem(9, "Krokodil", "Speel het krokodillen spel totdat er iemand moet drinken", 100, ObjectType.SHOPITEM, LocalTime.of(0, 0)),
+//                new ShopItem(10, "Double Or Nothing", "Kies een speler om een munt op te gooien. Als het kop is, moet hij/zij dubbel drinken voor 5 minuten; als het munt is, hoeft hij/zij niet te drinken.", 100, ObjectType.SHOPITEM, LocalTime.of(0, 0)),
+//                new ShopItem(11, "Pauze", "Neem een pauze van 5 minuten waarin jij niet hoeft te drinken, maar iemand anders wel voor jou moet drinken wanneer jij normaal zou moeten drinken", 100, ObjectType.SHOPITEM, LocalTime.of(0, 5)),
+//                new ShopItem(12, "BDSM", "boei 2 mensen samen voor 10 minuten", 100, ObjectType.SHOPITEM, LocalTime.of(0, 10)),
+//                new ShopItem(13, "Cupido", "Kies 2 mensen die plotseling diep verliefd worden en graag alles samen willen drinken", 100, ObjectType.SHOPITEM, LocalTime.of(0, 15)),
+//                new ShopItem(14, "Midget Bierpong", "Speel een potje bierpong met 3 cups, verliezer drinkt 3 extra slokken", 100, ObjectType.SHOPITEM, LocalTime.of(0, 0)),
+//                new ShopItem(15, "Zwakke hand", "Iedereen moet de komende 15 minuten met hun niet dominante hand drinken, doe je dit niet moet je een extra slok nemen", 100, ObjectType.SHOPITEM, LocalTime.of(0, 5)),
+//                new ShopItem(16, "No Brainer", "Voor de volgende 5 vragen moet de gekozen speler een shotje nemen per fout antwoord", 100, ObjectType.SHOPITEM, LocalTime.of(0, 0)),
+//                new ShopItem(17, "Oome Geert", "Verzin een regel die de komende 15 minuten geldt", 100, ObjectType.SHOPITEM, LocalTime.of(0, 15)),
+//                new ShopItem(100, "Mystery Box", "Wie weet wat er allemaal in kan zitten", 250, ObjectType.SHOPITEM, LocalTime.of(0, 0)) // Must always be last index so it cant be selected by random roll
 //        );
 //
-//        shopRepository.saveAll(shopItems);
+//                shopRepository.saveAll(shopItems);
 //
 //        // CHALLENGES
 //        List<Challenge> challenges = List.of(
@@ -87,11 +90,19 @@ public class DataSeeder implements ApplicationRunner {
 //                new Question(6, "Hoeveel procent van de wereldbevolking is linkshandig?", "10%", List.of("10%", "5%", "15%", "20%"), "Linkshandigen zijn zeldzaam", ObjectType.QUESTION)
 //        );
 //
+//        // TEST
+//        List<Question> testQuestions = List.of(
+//                new Question(7, "Hoeveel procent van de wereldbevolking is linkshandig?", "10%", List.of("10%", "5%", "15%", "20%"), "Linkshandigen zijn zeldzaam", ObjectType.QUESTION)
+//        );
+//
 //        questionRepository.saveAll(questions);
+//        questionRepository.saveAll(testQuestions);
 //
 //        // QUIZ
 //        Quiz quiz = new Quiz(1, questions, 0);
+//        Quiz testQuiz = new Quiz(2, testQuestions, 0);
 //
 //        quizRepository.save(quiz);
+//        quizRepository.save(testQuiz);
     }
 }

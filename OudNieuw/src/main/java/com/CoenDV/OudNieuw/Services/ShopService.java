@@ -1,6 +1,7 @@
 package com.CoenDV.OudNieuw.Services;
 
 import com.CoenDV.OudNieuw.Models.DTO.BuyRequest;
+import com.CoenDV.OudNieuw.Models.Enums.ObjectType;
 import com.CoenDV.OudNieuw.Models.ShopItem;
 import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Repositories.ShopRepository;
@@ -27,7 +28,7 @@ public class ShopService {
     }
 
     public List<ShopItem> getShopItems() {
-        return shopRepository.findAll();
+        return shopRepository.findByObjectTypeNot(ObjectType.SECRET);
     }
 
     @SendTo("/topic/quiz-mainscreen")

@@ -28,7 +28,7 @@ public class ShopController {
     public User buyItem(@RequestBody BuyRequest item) {
         System.out.println(item);
 
-        if (item.getItemId() == 10) // Mystery Box
+        if (item.getItemId() == 100) // Mystery Box
             return shopService.buyMysteryBox(item);
 
         return shopService.buyItem(item);
