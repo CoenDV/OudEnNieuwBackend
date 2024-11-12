@@ -31,7 +31,7 @@ public class DataSeeder implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        // USERS
+//        // USERS
 //        List<User> users = List.of(
 //                new User(1, "Melvin", Role.ROLE_USER, 1000, null),
 //                new User(2, "Jeffrey", Role.ROLE_USER, 0, null),
@@ -73,11 +73,22 @@ public class DataSeeder implements ApplicationRunner {
 //
 //        // CHALLENGES
 //        List<Challenge> challenges = List.of(
-//                new Challenge(1, "ONMV", "Melvin houdt van eten", "Melvin houdt van eten, het is jou doel om minimaal 1 goede hap van hem te stelen ZONDER dat hij het doorheeft", LocalTime.of(2, 0), 100, false),
-//                new Challenge(2, "ONDR", "Drogeer challenge", "Gebruik het zout uit het zakje om iemands drankje te spiken, je wint wanneer je doelwit een slok neemt", LocalTime.of(0, 1), 100, false),
-//                new Challenge(3, "ONKN", "Teddy bear", "Geef 1 persson 5x een knuffel, binnen 30min", LocalTime.of(0, 30), 100, false),
-//                new Challenge(4, "ONOB", "Waarom pakt hij dit aan?", "Geef iemand een random object aan zonder dat de ander er bewust van is dat ze het aanpakken (bijvoorbeeld tijdens het bellen)", LocalTime.of(2, 0), 100, false)
-//        );
+//                new Challenge(1, "ONKN", "Teddy bear", "Geef 1 persson 5x een knuffel, binnen 30min", LocalTime.of(0, 30), 250, false),
+//                new Challenge(2, "ONWRM", "Waarom pakt hij dit aan?", "Geef iemand een random object aan zonder dat de ander er bewust van is dat ze het aanpakken, bijvoorbeeld tijdens het bellen. Bonus punten voor vreemde objecten.", LocalTime.of(2, 0), 250, false),
+//                new Challenge(3, "ONMV", "Melvin houdt van eten", "Melvin houdt van eten, het is jou doel om minimaal 1 goede hap van hem te stelen ZONDER dat hij het doorheeft", LocalTime.of(2, 0), 250, false),
+//                new Challenge(4, "ONDR", "Drogeer challenge", "Gebruik het zout uit het zakje om iemands drankje te spiken, je wint wanneer je doelwit een slok neemt", LocalTime.of(1, 0), 250, false),
+//                new Challenge(5, "ONUNO", "Uno Reverse Card", "Zet deze in wanneer er een shop item tegen je gebruikt wordt, dat persoon mag nu zijn eigen opdracht uitvoeren.", LocalTime.of(1, 0), 250, false),
+//                new Challenge(6, "ONMT", "Moppentapper", "vertel tussen gesprekken door 5 moppen, als 3 of meer mensen lachen heb je gewonnen.", LocalTime.of(1, 0), 250, false),
+//                new Challenge(7, "ONGL", "Glimlachen", "glimlach 5 minuten lang zonder dat iemand het opvalt, als iemand je er op aanspreekt heb je verloren.", LocalTime.of(0, 30), 250, false),
+//                new Challenge(8, "ONAT", "Atleet", "Overtuig een paar mensen dat je een handstand kan doen, wanneer 3 mensen kijken heb je gewonnen.", LocalTime.of(1, 0), 250, false),
+//                new Challenge(9, "ONWL", "Wat lief", "Geef 1 iemand 5 complimenten in 30 minuten, als je er op aangesproken wordt ", LocalTime.of(0, 30), 250, false),
+//                new Challenge(10, "ONSN", "Sticky notes", "Schrijf iets raars of grappigs op de sticky note en plak het op iemands rug zonder dat dat persoon het door heeft.", LocalTime.of(0, 30), 250, false),
+//                new Challenge(11, "ONDN", "Deez nuts", ": Je hebt een uur om iemand in je deez nuts, of vergelijkbaar, grapje te laten trappen.", LocalTime.of(1, 0), 250, false),
+//                new Challenge(12, "ONKK", "Karaoke koning(in)", "Zing een liedje luidop en probeer anderen mee te laten zingen. Als minstens één persoon meezingt, heb je gewonnen. Je mag natuurlijk muziek gebruiken, zonder is bonus punten", LocalTime.of(1, 0), 250, false),
+//                new Challenge(13, "ONVP", "Vies peuk", "Overtuig iemand een kledingstuk uit te laten doen.", LocalTime.of(1, 0), 250, false),
+//                new Challenge(14, "ONBI", "Bad Influence", "Overtuig 3 mensen om samen een shotje te nemen.", LocalTime.of(1, 0), 250, false),
+//                new Challenge(15, "ONTE", "Too Eazy", "Zeg tijdens een quiz of ander spel 5x dit is te makkelijk", LocalTime.of(1, 0), 250, false)
+//                );
 //
 //        challengeRepository.saveAll(challenges);
 //
