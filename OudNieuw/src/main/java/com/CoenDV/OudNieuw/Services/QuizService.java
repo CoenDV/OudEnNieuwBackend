@@ -9,15 +9,12 @@ import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Repositories.QuizRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.TimerTask;
 
 @Service
 public class QuizService {
@@ -81,9 +78,9 @@ public class QuizService {
 
         AnswerReply reply = new AnswerReply();
         if (quiz.getCorrectAnswer(answer.getAnswer())) {
-            User user = userService.addPoints(new AddPointsRequest(userService.getUserById(answer.getUserId()).getUsername(), 100));
+            User user = userService.addPoints(new AddPointsRequest(userService.getUserById(answer.getUserId()).getUsername(), 10));
             reply.setUser(user);
-            reply.setPoints(100);
+            reply.setPoints(10);
             System.out.println("Correct answer: " + reply);
             return reply;
         } else {
