@@ -72,7 +72,7 @@ public class QuizService {
         }
     }
 
-    public AnswerReply answerQuestion(AnswerRequest answer) {
+    public AnswerReply answerQuestion(AnswerRequest answer) throws JsonProcessingException {
 
         System.out.println("Answer: " + answer);
 

@@ -5,13 +5,14 @@ import com.CoenDV.OudNieuw.Models.DTO.GetPointsReply;
 import com.CoenDV.OudNieuw.Models.DTO.LoginRequestDTO;
 import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Services.UserService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:5173/", "https://oudennieuw.onrender.com/", "https://oud-en-nieuw-backend-git-coen-de-vries-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/"})
+@CrossOrigin(origins = {"http://localhost:5173/", "https://oudennieuw.onrender.com/"})
 @RequestMapping("login")
 public class UserController {
 
@@ -33,12 +34,11 @@ public class UserController {
 
     @GetMapping("/{username}/points")
     public GetPointsReply getPoints(@PathVariable String username) {
-        System.out.println();
         return userService.getPoints(username);
     }
 
     @PutMapping
-    public User addPoints(@RequestBody AddPointsRequest request) {
+    public User addPoints(@RequestBody AddPointsRequest request) throws JsonProcessingException {
         return userService.addPoints(request);
     }
 }

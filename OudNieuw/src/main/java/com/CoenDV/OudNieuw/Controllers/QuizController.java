@@ -51,7 +51,7 @@ public class QuizController {
 
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
-    public AnswerReply answerQuestion(AnswerRequest answer) {
+    public AnswerReply answerQuestion(AnswerRequest answer) throws JsonProcessingException {
         return quizService.answerQuestion(answer);
     }
 }
