@@ -44,11 +44,18 @@ public class UserService {
         if (user.isPresent()) {
             User u = user.get();
             u.setPoints(u.getPoints() + request.getPoints());
+            u.setTotalPoints(u.getTotalPoints() + request.getPoints());
             userRepository.save(u);
             template.convertAndSend("/topic/quiz-mainscreen", objectMapper.writeValueAsString("update points"));
             return u;
         }
         return null;
+    }
+
+    public void addCorrectAnswerCount(int id) {
+        User u = userRepository.findById(id).get();
+        u.setCorrectAnswers(u.getCorrectAnswers() + 1);
+        userRepository.save(u);
     }
 
     public GetPointsReply getPoints(String username) {

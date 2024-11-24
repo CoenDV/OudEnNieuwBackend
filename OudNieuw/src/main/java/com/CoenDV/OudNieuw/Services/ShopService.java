@@ -45,6 +45,7 @@ public class ShopService {
 
         if (u.getPoints() >= si.getPoints()) {
             u.setPoints(u.getPoints() - si.getPoints());
+            u.setItemsBought(u.getItemsBought() + 1);
 
             template.convertAndSend("/topic/quiz-mainscreen", si);
             return userRepository.save(u);

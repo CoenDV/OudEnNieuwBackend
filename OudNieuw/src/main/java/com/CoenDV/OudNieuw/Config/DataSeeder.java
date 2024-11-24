@@ -33,12 +33,12 @@ public class DataSeeder implements ApplicationRunner {
 
         // USERS
         List<User> users = List.of(
-                new User(1, "Melvin", Role.ROLE_USER, 1000, null),
-                new User(2, "Jeffrey", Role.ROLE_USER, 0, null),
-                new User(3, "Daniel", Role.ROLE_USER, 0, null),
-                new User(4, "Bjorn", Role.ROLE_USER, 0, null),
-                new User(5, "Quinty", Role.ROLE_USER, 0, null),
-                new User(6, "Femke", Role.ROLE_USER, 0, null)
+                new User(1, "Melvin", Role.ROLE_USER, 1000, null, 0, 0, 0),
+                new User(2, "Jeffrey", Role.ROLE_USER, 0, null, 0, 0, 0),
+                new User(3, "Daniel", Role.ROLE_USER, 0, null, 0, 0, 0),
+                new User(4, "Bjorn", Role.ROLE_USER, 0, null, 0, 0, 0),
+                new User(5, "Quinty", Role.ROLE_USER, 0, null, 0, 0, 0),
+                new User(6, "Femke", Role.ROLE_USER, 0, null, 0, 0, 0)
         );
 
         userRepository.saveAll(users);

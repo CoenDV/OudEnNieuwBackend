@@ -23,4 +23,9 @@ public class User {
     private int points;
     @OneToOne
     private Challenge activeChallenge;
+
+    // stats
+    private int correctAnswers;
+    private int itemsBought;
+    private int totalPoints;
 }

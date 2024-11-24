@@ -79,6 +79,7 @@ public class QuizService {
         AnswerReply reply = new AnswerReply();
         if (quiz.getCorrectAnswer(answer.getAnswer())) {
             User user = userService.addPoints(new AddPointsRequest(userService.getUserById(answer.getUserId()).getUsername(), 10));
+            userService.addCorrectAnswerCount(answer.getUserId());
             reply.setUser(user);
             reply.setPoints(10);
             System.out.println("Correct answer: " + reply);
