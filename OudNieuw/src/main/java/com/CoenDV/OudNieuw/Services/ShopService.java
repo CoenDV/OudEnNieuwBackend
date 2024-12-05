@@ -28,7 +28,7 @@ public class ShopService {
     }
 
     public List<ShopItem> getShopItems() {
-        return shopRepository.findByObjectTypeNot(ObjectType.SECRET);
+        return shopRepository.findByObjectTypeNotOrderByPointsAsc(ObjectType.SECRET);
     }
 
     @SendTo("/topic/quiz-mainscreen")

@@ -6,6 +6,8 @@ import com.CoenDV.OudNieuw.Models.User;
 import com.CoenDV.OudNieuw.Repositories.UserRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.transaction.Transactional;
+import org.hibernate.Hibernate;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +27,8 @@ public class UserService {
         this.objectMapper = objectMapper;
     }
 
-    public Optional<User> login(String username) {
-        return userRepository.findByUsername(username);
+    public Optional<User> login(String username, String password) {
+        return userRepository.findByUsernameAndPassword(username, password);
     }
 
     public List<User> getAllUsers() {

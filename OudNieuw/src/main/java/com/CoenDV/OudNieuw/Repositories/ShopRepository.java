@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ShopRepository extends JpaRepository<ShopItem, Integer> {
 
-    List<ShopItem> findByObjectTypeNot(ObjectType objectType);
+    List<ShopItem> findByObjectTypeNotOrderByPointsAsc(ObjectType objectType);
 }

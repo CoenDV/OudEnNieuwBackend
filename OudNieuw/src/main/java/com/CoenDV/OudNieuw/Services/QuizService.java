@@ -75,6 +75,7 @@ public class QuizService {
     public AnswerReply answerQuestion(AnswerRequest answer) throws JsonProcessingException {
 
         System.out.println("Answer: " + answer);
+        template.convertAndSend("/topic/quiz-mainscreen", objectMapper.writeValueAsString("playerAnswered"));
 
         AnswerReply reply = new AnswerReply();
         if (quiz.getCorrectAnswer(answer.getAnswer())) {
@@ -83,6 +84,7 @@ public class QuizService {
             reply.setUser(user);
             reply.setPoints(10);
             System.out.println("Correct answer: " + reply);
+
             return reply;
         } else {
             reply.setUser(userService.getUserById(answer.getUserId()));

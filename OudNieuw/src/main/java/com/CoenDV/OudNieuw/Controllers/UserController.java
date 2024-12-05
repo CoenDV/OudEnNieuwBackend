@@ -23,8 +23,9 @@ public class UserController {
     }
 
     @PostMapping
-    public Optional<User> login(@RequestBody LoginRequestDTO username) {
-        return userService.login(username.getUsername());
+    public Optional<User> login(@RequestBody LoginRequestDTO login) {
+        System.out.println(login);
+        return userService.login(login.getUsername(), login.getPassword());
     }
 
     @GetMapping

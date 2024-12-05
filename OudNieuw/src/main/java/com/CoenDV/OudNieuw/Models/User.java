@@ -1,14 +1,18 @@
 package com.CoenDV.OudNieuw.Models;
 
 import com.CoenDV.OudNieuw.Models.Enums.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.Nullable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Entity
 @Data
@@ -19,6 +23,7 @@ public class User {
     @Id
     private int userId;
     private String username;
+    private String password;
     private Role role;
     private int points;
     @OneToOne
